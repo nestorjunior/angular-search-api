@@ -8,3 +8,15 @@
 	</div>
 
 </div>
+
+<div class="jumbotron">
+	
+	<ul class="list-group">
+	  <li *ngFor="let item of items" class="list-group-item d-flex justify-content-between align-items-center">
+	    <span class="badge badge-primary badge-pill">{{ item.id }}</span>
+	    {{ item.title }}
+	    <img src="{{ item.thumbnailUrl }}" alt="">
+	  </li>
+	</ul>
+
+</div>

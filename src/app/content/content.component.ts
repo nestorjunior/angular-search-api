@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { SearchService } from '../search.service'
+import { Item } from '../shared/items.model'
 
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  styleUrls: ['./content.component.css'],
+  providers: [SearchService]
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+	public items: Item[]
 
-  ngOnInit() {
-  }
+	constructor(private searchService: SearchService ) { }
+
+	ngOnInit() {
+		this.items = this.searchService.getItems()
+		console.log(this.items)
+	}
 
 }
