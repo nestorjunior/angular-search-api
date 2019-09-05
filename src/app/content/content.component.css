@@ -1,0 +1,11 @@
+.jumbotron {
+	padding-top: 50px;
+}
+
+.btn {
+	color: #fff;
+}
+
+.btn:hover {
+	background: #df691a;
+}
