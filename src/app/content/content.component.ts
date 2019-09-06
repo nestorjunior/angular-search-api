@@ -10,13 +10,12 @@ import { Item } from '../shared/items.model'
 })
 export class ContentComponent implements OnInit {
 
-	public items: Item[]
+	public items: Item
 
 	constructor(private searchService: SearchService ) { }
 
 	ngOnInit() {
-		this.items = this.searchService.getItems()
-		console.log(this.items)
+		
 	}
 
 }
