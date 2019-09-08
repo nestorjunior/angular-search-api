@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core'
 import { SearchService } from '../search.service'
 import { Item } from '../shared/items.model'
 
+import { Observable } from 'rxjs/Rx'
+
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -16,6 +18,10 @@ export class ContentComponent implements OnInit {
 
 	ngOnInit() {
 		
+	}
+
+	public search(event: Event): void {
+		console.log((<HTMLInputElement>event.target).value)
 	}
 
 }

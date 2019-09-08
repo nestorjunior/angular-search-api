@@ -9,6 +9,4 @@ export class SearchService {
 
 	constructor(private http: HttpClient) { }
 
-	
-
 }
