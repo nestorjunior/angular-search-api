@@ -20,8 +20,8 @@ export class ContentComponent implements OnInit {
 		
 	}
 
-	public search(event: Event): void {
-		console.log((<HTMLInputElement>event.target).value)
+	public search(searchItem: string): void {
+		console.log(searchItem)
 	}
 
 }

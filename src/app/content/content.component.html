@@ -1,7 +1,7 @@
 <div class="jumbotron">
 	
 	<div class="input-group input-group-lg">
-	  <input type="text" class="form-control" aria-label="Large" (keyup)="search($event)">
+	  <input type="text" class="form-control" aria-label="Large" #searchItem (keyup)="search(searchItem.value)">
 	  <div class="input-group-append">
 	    <button class="btn btn-primary btn-outline-secondary" type="button">Button</button>
 	  </div>
