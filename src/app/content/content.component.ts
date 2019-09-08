@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Rx'
 })
 export class ContentComponent implements OnInit {
 
-	public items: Item
+	public items: Observable<Item[]>
 
 	constructor(private searchService: SearchService ) { }
 
@@ -21,7 +21,11 @@ export class ContentComponent implements OnInit {
 	}
 
 	public search(searchItem: string): void {
-		console.log(searchItem)
+		this.items = this.searchService.searchTerm(searchItem)
+		
+		this.items.subscribe(
+			(items: Item[]) => console.log(items)
+		)
 	}
 
 }
