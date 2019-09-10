@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core'
-import { SearchService } from '../search.service'
-import { Item } from '../shared/items.model'
+import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../search.service';
+import { Item } from '../shared/items.model';
 
-import { Observable } from 'rxjs/Rx'
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-content',
@@ -11,23 +11,18 @@ import { Observable } from 'rxjs/Rx'
   providers: [SearchService]
 })
 export class ContentComponent implements OnInit {
+  public items: Item[] = [];
 
-	public items: Item[] = []
+  constructor(private searchService: SearchService) {}
 
-	constructor(private searchService: SearchService ) { }
+  ngOnInit() {}
 
-	ngOnInit() {
-		
-	}
+  public search(searchItem: string): void {
+    this.searchService.searchTerm(searchItem);
 
-	public search(searchItem: string): void {
-		
-		this.searchService.searchTerm(searchItem)
-
-		this.searchService.itemCollection.subscribe((res: Item[]) => {
-			console.log(res)
-			this.items = res
-		})
-	}
-
+    this.searchService.itemCollection.subscribe((res: Item[]) => {
+      console.log(res);
+      this.items = res;
+    });
+  }
 }
